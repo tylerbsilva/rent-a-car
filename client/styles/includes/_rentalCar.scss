@@ -1,0 +1,52 @@
+.rentalCar {
+  display:block;
+  float:left;
+  background-color: #FFF;
+  width:98%;
+  margin:1%;
+  padding:1em;
+  transition: 100ms all linear;
+  @include box_shadow(1);
+  h4 {
+    margin: 1%;
+    margin-bottom: 1em;
+  }
+  a {
+    display:inline-block;
+    background-color: $turoGreen;
+    padding: 1em;
+    float:right;
+    margin: 0.5em auto 0;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    @include box_shadow(1);
+    transition: 100ms all linear;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      @include box_shadow(2);
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td {
+  vertical-align:top;
+  padding: 0.5rem;
+  &:first-child {
+    font-weight:bold;
+    text-align: right;
+  }
+}
+
+@media screen and (min-width:1300px) {
+  .rentalCar {
+    width: 48%;
+    min-height:450px;
+  }
+}
