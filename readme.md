@@ -24,8 +24,8 @@ I ran into a few issues regarding making calls to the Hotline API. At first, I d
 ## Next Steps
 
 After limiting myself to 8 hours, I composed a list of what I would do to further my project:
-[] Clean up styles even more
-[] Give the site more of a "brand"
-[] Allow user to filter by Car type via search
-[] Have a better setup for mobile, as right now the collapsing works but isn't great
-[] Add even more filtering capabilities once the data comes back from Hotline (Price high/low, features, seats)
+- [ ] Clean up styles even more
+- [ ] Give the site more of a "brand"
+- [ ] Allow user to filter by Car type via search
+- [ ] Have a better setup for mobile, as right now the collapsing works but isn't great
+- [ ] Add even more filtering capabilities once the data comes back from Hotline (Price high/low, features, seats)
