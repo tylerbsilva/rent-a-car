@@ -1,6 +1,6 @@
 # Rent-A-Car
 
-A simple React + Redux implementation of a rental car search built off of the Hotline API. This will be turned into a free video series once the app is totally fleshed out.
+A simple React/Redux implementation of a rental car search built off of the Hotline API. This was for a coding test for a company.
 
 ## Running
 
@@ -8,7 +8,7 @@ First `npm install` to grab all the necessary dependencies.
 
 Then run `npm start` and open <localhost:7770> in your browser.
 
-Or visit [http://rent-a-car-ts.surge.sh/](http://rent-a-car-ts.surge.sh/) to view the live version.
+Or visit [https://ts-rent-a-car.herokuapp.com/](https://ts-rent-a-car.herokuapp.com/) to view the live version.
 
 ## Implementation
 
@@ -24,8 +24,8 @@ I ran into a few issues regarding making calls to the Hotline API. At first, I d
 ## Next Steps
 
 After limiting myself to 8 hours, I composed a list of what I would do to further my project:
-- Clean up styles even more
-- Give the site more of a "brand"
-- Allow user to filter by Car type via search
-- Have a better setup for mobile, as right now the collapsing works but isn't great
-- Add even more filtering capabilities once the data comes back from Hotline
+[] Clean up styles even more
+[] Give the site more of a "brand"
+[] Allow user to filter by Car type via search
+[] Have a better setup for mobile, as right now the collapsing works but isn't great
+[] Add even more filtering capabilities once the data comes back from Hotline (Price high/low, features, seats)
