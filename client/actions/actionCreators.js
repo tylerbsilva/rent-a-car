@@ -1,4 +1,5 @@
-import fetch from 'isomorphic-fetch'
+// import fetch from 'isomorphic-fetch';
+import axios from 'axios';
 
 export const REQUEST_RENTALS = 'REQUEST_RENTALS'
 export function requestRentals() {
@@ -19,9 +20,7 @@ export function receiveRentals(json, meta) {
 
 export const FETCH_RENTALS = 'FETCH_RENTALS'
 export function fetchRentals(data) {
-  let url = 'http://api.hotwire.com/v1/search/car?';
-  data.apiKey = 'kn6d52f66n2bnsydn43wq6y7';
-  data.format = 'JSON';
+  let url = '/api/rentals?';
   for (var key in data) {
     if (url != "") {
         url += "&";
@@ -30,8 +29,8 @@ export function fetchRentals(data) {
   }
   return dispatch => {
     dispatch(requestRentals())
-    return fetch(url)
-      .then(response => response.json())
+    return axios.get(url)
+      .then(e => e.data)
       .then(json => dispatch(receiveRentals(json.Result, json.MetaData.CarMetaData.CarTypes)))
   }
 }

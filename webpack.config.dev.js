@@ -17,6 +17,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
+  headers: { "Access-Control-Allow-Origin": "*" },
   module: {
     loaders: [
     // js

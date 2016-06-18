@@ -10,7 +10,7 @@ const Home = React.createClass({
       </div>
       <div id="results" className={this.props.rentals.isFetching ? "notLoading" : ""}>
         {this.props.rentals.currentData.map((el,i)=>{
-          return <RentalCar id={i} {...el} {...this.props.rentals} />
+          return <RentalCar id={i} key={i} {...el} {...this.props.rentals} />
         })}
       </div>
     </div>)
