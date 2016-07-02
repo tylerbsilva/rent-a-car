@@ -9,14 +9,23 @@ export function requestRentals() {
 }
 
 export const RECEIVE_RENTALS = 'RECEIVE_RENTALS'
-export function receiveRentals(json, meta) {
-  return {
-    type: RECEIVE_RENTALS,
-    currentData: json,
-    metaData: meta,
-    receivedAt: Date.now()
+export function receiveRentals(json) {
+  if(json.StatusCode > 0){
+    return {
+      type: HANDLE_ERROR,
+      errorMessage: json.Errors.Error.ErrorMessage
+    }
+  } else {
+    return {
+      type: RECEIVE_RENTALS,
+      currentData: json.Result,
+      metaData: json.MetaData.CarMetaData.CarTypes,
+      receivedAt: Date.now()
+    }
   }
 }
+
+export const HANDLE_ERROR = 'HANDLE_ERROR';
 
 export const FETCH_RENTALS = 'FETCH_RENTALS'
 export function fetchRentals(data) {
@@ -31,7 +40,7 @@ export function fetchRentals(data) {
     dispatch(requestRentals())
     return axios.get(url)
       .then(e => e.data)
-      .then(json => dispatch(receiveRentals(json.Result, json.MetaData.CarMetaData.CarTypes)))
+      .then(json => dispatch(receiveRentals(json)))
   }
 }
 

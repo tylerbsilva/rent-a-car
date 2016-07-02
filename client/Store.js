@@ -16,7 +16,9 @@ const defaultState = {
     didInvalidate: false,
     lastUpdated: 0,
     metaData: {},
-    currentData: []
+    currentData: [],
+    error: false,
+    errorMessage: ""
   }
 }
 

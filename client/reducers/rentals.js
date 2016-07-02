@@ -13,14 +13,18 @@ export default function rentals(state = {
   isFetching: false,
   didInvalidate: false,
   metaData: {},
-  currentData: []
+  currentData: [],
+  error: false,
+  errorMessage: ""
 }, action){
   switch(action.type) {
     case 'REQUEST_RENTALS' :
       return {
         ...state,
         isFetching: true,
-        didInvalidate: false
+        didInvalidate: false,
+        error: false,
+        errorMessage: ""
       }
     case 'RECEIVE_RENTALS':
       return {
@@ -29,7 +33,20 @@ export default function rentals(state = {
         didInvalidate: false,
         currentData: action.currentData,
         metaData: reduceMeta(action.metaData),
-        lastUpdated: action.receivedAt
+        lastUpdated: action.receivedAt,
+        error: false,
+        errorMessage: ""
+      }
+    case 'HANDLE_ERROR':
+      return {
+        ...state,
+        isFetching: false,
+        didInvalidate: false,
+        lastUpdated: action.receivedAt,
+        currentData: [],
+        metaData: {},
+        error: true,
+        errorMessage: action.errorMessage
       }
     default :
       return state;
